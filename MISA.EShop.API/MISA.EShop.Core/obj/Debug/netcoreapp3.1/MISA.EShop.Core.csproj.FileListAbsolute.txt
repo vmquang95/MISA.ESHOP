@@ -1,0 +1,9 @@
+D:\BaiDanhGiaMISA\MISA.EShop.API\MISA.EShop.Core\bin\Debug\netcoreapp3.1\MISA.EShop.Core.deps.json
+D:\BaiDanhGiaMISA\MISA.EShop.API\MISA.EShop.Core\bin\Debug\netcoreapp3.1\MISA.EShop.Core.dll
+D:\BaiDanhGiaMISA\MISA.EShop.API\MISA.EShop.Core\bin\Debug\netcoreapp3.1\MISA.EShop.Core.pdb
+D:\BaiDanhGiaMISA\MISA.EShop.API\MISA.EShop.Core\obj\Debug\netcoreapp3.1\MISA.EShop.Core.csprojAssemblyReference.cache
+D:\BaiDanhGiaMISA\MISA.EShop.API\MISA.EShop.Core\obj\Debug\netcoreapp3.1\MISA.EShop.Core.AssemblyInfoInputs.cache
+D:\BaiDanhGiaMISA\MISA.EShop.API\MISA.EShop.Core\obj\Debug\netcoreapp3.1\MISA.EShop.Core.AssemblyInfo.cs
+D:\BaiDanhGiaMISA\MISA.EShop.API\MISA.EShop.Core\obj\Debug\netcoreapp3.1\MISA.EShop.Core.csproj.CoreCompileInputs.cache
+D:\BaiDanhGiaMISA\MISA.EShop.API\MISA.EShop.Core\obj\Debug\netcoreapp3.1\MISA.EShop.Core.dll
+D:\BaiDanhGiaMISA\MISA.EShop.API\MISA.EShop.Core\obj\Debug\netcoreapp3.1\MISA.EShop.Core.pdb

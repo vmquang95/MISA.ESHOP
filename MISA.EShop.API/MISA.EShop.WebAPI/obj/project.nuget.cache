@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "b9kie7CHNKLRm4xH2jMr6iZLU2dy+UQTrGmJGvAyJjWeIQRnwgCczWEzGh3KrjXFYqA2M/MWZMX+Pt7WGrirEg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Dell E7450\\Desktop\\MISA.Eshop\\MISA.EShop.API\\MISA.EShop.WebAPI\\MISA.EShop.WebAPI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Dell E7450\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\Dell E7450\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Dell E7450\\.nuget\\packages\\swashbuckle.aspnetcore\\6.1.4\\swashbuckle.aspnetcore.6.1.4.nupkg.sha512",
+    "C:\\Users\\Dell E7450\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.1.4\\swashbuckle.aspnetcore.swagger.6.1.4.nupkg.sha512",
+    "C:\\Users\\Dell E7450\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.1.4\\swashbuckle.aspnetcore.swaggergen.6.1.4.nupkg.sha512",
+    "C:\\Users\\Dell E7450\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.1.4\\swashbuckle.aspnetcore.swaggerui.6.1.4.nupkg.sha512"
+  ],
+  "logs": []
+}
