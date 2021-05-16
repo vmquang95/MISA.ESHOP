@@ -20,9 +20,9 @@
             title="Tính năng này đang được cập nhật"
           >
             <button
-              class="t-btn btn-replication t-btn-disable"
+              class="t-btn btn-replication"
               id="btn-replication"
-              disabled
+              @click="showAlertCopyObject()"
             >
               <i class="t-icon t-icon-replication"></i>
               <span>Nhân bản</span>
@@ -419,6 +419,10 @@ export default {
       this.reLoadData();
       this.closeCreateDialogForm();
     },
+    showAlertCopyObject(){
+      this.alertMessage="Chức năng  đang hoàn thiện";
+      this.openAlertModal(this.alertMessage);
+    }
   },
 };
 </script>

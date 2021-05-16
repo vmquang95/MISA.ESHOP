@@ -13,8 +13,8 @@
     /* định dạng 1 class khi bị disable */
     .t-btn-disable{
         /* pointer-events: none; */
-        cursor: no-drop !important;
         opacity: 0.5;
+        cursor:  auto !important;
     }
     .t-btn-disable:hover{
         pointer-events: visible;

@@ -61,6 +61,21 @@
     <!-- end header -->
 </template>
 
+<script>
+export default {
+  data(){
+    return{
+
+    }
+  },
+  methods:{
+  
+  }
+
+}
+</script>
+
 <style scoped>
 @import "../../styles/layout/header.css";
 </style>
+

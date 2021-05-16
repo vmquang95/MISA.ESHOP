@@ -1,3 +1,6 @@
 ﻿Những thứ cần hoàn thiện
 1. fix scroll only tbody những vẫn giữ nguyên vị trí
 2.Bổ sung tính năng checkbox update trạng thái cửa hàng cho ô sửa
+3. sửa lỗi thêm/sửa tỉnh,huyện,đường phố
+4. thanh thông báo cần đẹp hơn
+5. những thì có nút bấm nhưng không bấm được cần có thông báo
