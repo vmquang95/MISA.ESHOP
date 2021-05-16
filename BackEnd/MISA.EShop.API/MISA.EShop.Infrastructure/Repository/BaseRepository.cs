@@ -15,10 +15,8 @@ namespace MISA.EShop.Infrastructure.Repository
 {
     public class BaseRepository<T> : IBaseRepository<T>
     {
-        //Tên của đối tượng
         protected string _tableName = string.Empty;
 
-        //Chuỗi kết nối đến CSDL
         protected string _connectionString = "" +
                "Host=47.241.69.179; " +
                "Port=3306;" +
@@ -27,7 +25,6 @@ namespace MISA.EShop.Infrastructure.Repository
                "Database=MF806_VMQUANG_MISAeShop; " +
                "convert zero datetime=True;";
 
-        //Khai báo kết nối
         protected IDbConnection _dbConnection;
         public BaseRepository()
         {
@@ -81,9 +78,7 @@ namespace MISA.EShop.Infrastructure.Repository
 
         public int Update(T entity, Guid entityId)
         {
-            // thực hiện cập nhật cơ sở dữ liệu
             var storeName = $"Proc_Update{_tableName}";
-            //var storeParam = entity;
             var keyProperty = GetKeyProperty();
             var properties = typeof(T).GetProperties();
             var storeParam = new DynamicParameters();

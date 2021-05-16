@@ -7,53 +7,64 @@ using System.Threading.Tasks;
 
 namespace MISA.EShop.Core.Results
 {
+    /// <summary>
+    /// Class lưu trử thông tin trả về của Services.
+    /// Class lưu trữ hàm xử lý lỗi phía Services.
+    /// </summary>
+    /// CreatedBy: vmquang(14/5/2021)
     public class ResponseResult
     {
-        // thông báo thao tác thành công hay thất bại, default là true
+        #region Properties
+        // Thành công hay thất bại, mặc định true.
         public bool IsSuccess { get; set; } = true;
 
-        // nội dung thông báo cho người lập trình
+        // Messagess cho lập trình viên.
         public string DevMsg { get; set; }
 
-        // nội dung thông báo cho user
+        // Messagess cho user
         public string UserMsg { get; set; }
 
-        // mã code lỗi của thao tác, mặc định ban đầu là NONE - không có lỗi
+        // Mã lỗi thao tác, mặc định là NONE(0) không có lỗi.
         public ErrorCode ErrorCode { get; set; } = ErrorCode.NONE;
 
-        // thông tin tìm hiểu thêm cho dev
+        // Thông tin thêm thêm cho lập trình viên.
         public string MoreInfo { get; set; }
 
-        // mã lỗi để tìm kiếm trên trang web nào đó ví dụ abc.com.vn
+        // Mã lỗi để tra cữu.
         public string TraceId { get; set; }
 
-        // dữ liệu của kết quả trả về
+        // Dữ liệu trả về dạng Object.
         public object Data { get; set; }
+        #endregion
 
+
+        #region Methods
         /// <summary>
         /// Xử lý lỗi ngoại lệ
         /// </summary>
         /// <param name="result"></param>
         /// <param name="ex"></param>
+        /// CreatedBy: vmquang(14/5/2021)
         public void OnException(ResponseResult result, Exception ex)
         {
-            result.UserMsg = Resources.ResourceMessage.Exception_User;
-            result.DevMsg = Resources.ResourceMessage.Exception_User;
+            result.UserMsg = Resources.Messages.ExceptionUser;
+            result.DevMsg = Resources.Messages.ExceptionUser;
             result.IsSuccess = false;
             result.ErrorCode = ErrorCode.EXCEPTION;
         }
 
         /// <summary>
-        /// Xử lý lỗi dữ liệu sai
+        /// Xử lý lỗi dữ liệu sai từ phía Client.
         /// </summary>
         /// <param name="result"></param>
+        /// CreatedBy: vmquang(14/5/2021)
         public void OnBadRequest(ResponseResult result)
         {
             result.IsSuccess = false;
             result.ErrorCode = ErrorCode.BADREQUEST;
-            result.DevMsg = Resources.ResourceMessage.Error_Input;
-            result.UserMsg = Resources.ResourceMessage.Error_Input;
+            result.DevMsg = Resources.Messages.ErrorInputData;
+            result.UserMsg = Resources.Messages.ErrorInputData;
         }
-
+        #endregion
     }
 }

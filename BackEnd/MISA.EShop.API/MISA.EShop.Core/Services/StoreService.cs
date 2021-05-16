@@ -20,27 +20,6 @@ namespace MISA.EShop.Core.Services
 
         
 
-        public ResponseResult GetStoreFilter(string storeCode, string storeName, string address, string phoneNumber, int status)
-        {
-            var result = new ResponseResult();
-            var stores = _unitOfWork.StoreTask.GetStoreFilter(storeCode, storeName, address, phoneNumber, status);
-            if (stores != null)
-            {
-                result.IsSuccess = true;
-                result.ErrorCode = Enum.ErrorCode.NONE;
-                result.Data = stores;
-                result.DevMsg = Resources.ResourceMessage.Get_Success;
-                result.UserMsg = Resources.ResourceMessage.Get_Success;
-            }
-            else
-            {
-                result.IsSuccess = false;
-                result.ErrorCode = Enum.ErrorCode.NOTFOUND;
-                result.UserMsg = Resources.ResourceMessage.Error_NotFound;
-
-            }
-            return result;
-        }
 
         public ResponseResult GetStoreByStoreCode(string storeCode)
         {
@@ -51,8 +30,8 @@ namespace MISA.EShop.Core.Services
                 result.Data = store;
                 result.IsSuccess = false;
                 result.ErrorCode = Enum.ErrorCode.BADREQUEST;
-                result.UserMsg = Resources.ResourceMessage.Error_Duplicate;
-                result.DevMsg = Resources.ResourceMessage.Error_Duplicate;
+                result.UserMsg = Resources.Messages.ErrorDuplicate;
+                result.DevMsg = Resources.Messages.ErrorDuplicate;
             }
             else
             {
@@ -78,14 +57,14 @@ namespace MISA.EShop.Core.Services
                 result.Data = stores;
                 result.IsSuccess = true;
                 result.ErrorCode = Enum.ErrorCode.NONE;
-                result.UserMsg = Resources.ResourceMessage.Get_Success;
+                result.UserMsg = Resources.Messages.GetDataSuccess;
             }
             else
             {
                 result.IsSuccess = false;
                 result.ErrorCode = Enum.ErrorCode.NOCONTENT;
-                result.UserMsg = Resources.ResourceMessage.Error_Filter;
-                result.DevMsg = Resources.ResourceMessage.Error_Filter;
+                result.UserMsg = Resources.Messages.ErrorFilterData;
+                result.DevMsg = Resources.Messages.ErrorFilterData;
             }
             return result;
         }
@@ -111,8 +90,8 @@ namespace MISA.EShop.Core.Services
                 {
                     responseResult.IsSuccess = false;
                     responseResult.ErrorCode = Enum.ErrorCode.BADREQUEST;
-                    responseResult.DevMsg = property.Key + " " + Resources.ResourceMessage.Error_Required;
-                    responseResult.UserMsg = property.Key + " " + Resources.ResourceMessage.Error_Required;
+                    responseResult.DevMsg = property.Key + " " + Resources.Messages.ErrorRequiredData;
+                    responseResult.UserMsg = property.Key + " " + Resources.Messages.ErrorRequiredData;
                 }
             }
 
@@ -124,8 +103,8 @@ namespace MISA.EShop.Core.Services
             {
                 responseResult.IsSuccess = false;
                 responseResult.ErrorCode = Enum.ErrorCode.BADREQUEST;
-                responseResult.DevMsg = propertyUnique + " " + Resources.ResourceMessage.Error_Duplicate;
-                responseResult.UserMsg = propertyUnique + " " + Resources.ResourceMessage.Error_Duplicate;
+                responseResult.DevMsg = propertyUnique + " " + Resources.Messages.ErrorDuplicate;
+                responseResult.UserMsg = propertyUnique + " " + Resources.Messages.ErrorDuplicate;
             }
 
         }

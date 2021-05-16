@@ -12,7 +12,6 @@ namespace MISA.EShop.Core.Enum
     /// NOTFOUND-404: url không đúng.
     /// BADREQUEST-400: Lỗi dữ liệu đầu vào sai.
     /// EXEPTION=500: Lỗi phía serve
-    /// CREATED-201: Thêm mới thành công.
     /// </summary>
     /// CreatedBy: vmquang(14/5/2021).
     public enum ErrorCode
@@ -24,20 +23,9 @@ namespace MISA.EShop.Core.Enum
         BADREQUEST = 400,
         NOCONTENT = 204,
         EXCEPTION = 500,
-        CREATED=201,
         #endregion
 
     }
 
-    /// <summary>
-    /// enum chứa tình trạng cửa hàng (0-đang hoat dộng , 1- đang đóng cửa)
-    /// </summary>
-    /// CreatedBy: vmquang(14/5/2021).
-    public enum StatusStore
-    {
-        #region Declare
-        isAlive = 0,
-        isnotAlive=1,
-        #endregion
-    }
+    
 }

@@ -75,7 +75,7 @@
                       type="text"
                       class="t-input filter-text"
                       id="filter-shop-code"
-                      v-model="filterGrid.storeCode"
+                      v-model="filterDataTable.storeCode"
                     />
                   </div>
                 </th>
@@ -87,7 +87,7 @@
                       type="text"
                       class="t-input filter-text"
                       id="filter-shop-name"
-                      v-model="filterGrid.storeName"
+                      v-model="filterDataTable.storeName"
                     />
                   </div>
                 </th>
@@ -99,7 +99,7 @@
                       type="text"
                       class="t-input filter-text"
                       id="filter-address"
-                      v-model="filterGrid.address"
+                      v-model="filterDataTable.address"
                     />
                   </div>
                 </th>
@@ -111,7 +111,7 @@
                       type="text"
                       class="t-input filter-text"
                       id="filter-phone-number"
-                      v-model="filterGrid.phoneNumber"
+                      v-model="filterDataTable.phoneNumber"
                     />
                   </div>
                 </th>
@@ -122,7 +122,7 @@
                       type="text"
                       class="filter-select"
                       id="filter-status"
-                      v-model="filterGrid.status"
+                      v-model="filterDataTable.status"
                     >
                       <option
                         v-for="option in storeStatus"
@@ -141,17 +141,12 @@
               <div class="loader"></div>
               <div class="text">Đang nạp dữ liệu</div>
             </div>
-
-            <!-- <div v-show="hasResult" class="not-find">
-              <i class="notify">Không tìm thấy kết quả</i>
-            </div> -->
-
             <tbody v-if="shops && shops.length" class="tbl-scroll">
               <tr
                 class="row-data"
                 v-for="shop in shops"
                 :key="shop.storeId"
-                @click="clickRow(shop.storeId,shop)"
+                @click="clickRow(shop.storeId, shop)"
                 @dblclick="openEditDialog(shop.storeId)"
                 v-bind:class="isSelected(shop.storeId) ? 'selected' : ''"
               >
@@ -161,9 +156,9 @@
                 <td class="col-21" :title="shop.storeName">
                   {{ shop.storeName }}
                 </td>
-                <td class="col-42" :title="shop.address">{{ shop.provinceId }}</td>
+                <td class="col-42" :title="shop.address">{{ shop.address }}</td>
                 <td class="col-10" :title="shop.phoneNumber">
-                  {{ shop.wardId}}
+                  {{ shop.phoneNumber | formatPhone() }}
                 </td>
                 <td class="col-12">{{ getStatusStoreName(shop.status) }}</td>
               </tr>
@@ -171,8 +166,6 @@
           </table>
         </div>
         <!-- end grid -->
-
-        <!-- begin footer -->
         <TheFooterStore />
       </div>
     </div>
@@ -216,7 +209,7 @@ export default {
   },
   data() {
     return {
-      objectSelected:null,
+      objectSelected: null,
       formMode: "post",
       isLoaded: false,
       hasResult: false,
@@ -237,7 +230,7 @@ export default {
           value: 1,
         },
       ],
-      filterGrid: {
+      filterDataTable: {
         storeCode: "",
         storeName: "",
         address: "",
@@ -257,42 +250,55 @@ export default {
     };
   },
 
-  props: {
-    // msg: String,
-  },
-
+ 
   created() {
-    // this.getData();
-    this.getStoreByFilter(this.filterGrid);
+    this.getStoreByFilter(this.filterDataTable);
   },
+  /**
+   * Theo dõi sự thay đổi của input filter.
+   * Tự đông cập nhật,load dữ liệu khi input được thay đổi.
+   * CreatedBy: vmquang 13/5/2021.
+   */
   watch: {
-    "filterGrid.storeCode"() {
-      this.getStoreByFilter(this.filterGrid);
+    "filterDataTable.storeCode"() {
+      this.getStoreByFilter(this.filterDataTable);
     },
-    "filterGrid.storeName"() {
-      this.getStoreByFilter(this.filterGrid);
+    "filterDataTable.storeName"() {
+      this.getStoreByFilter(this.filterDataTable);
     },
-    "filterGrid.address"() {
-      this.getStoreByFilter(this.filterGrid);
+    "filterDataTable.address"() {
+      this.getStoreByFilter(this.filterDataTable);
     },
-    "filterGrid.phoneNumber"() {
-      this.getStoreByFilter(this.filterGrid);
+    "filterDataTable.phoneNumber"() {
+      this.getStoreByFilter(this.filterDataTable);
     },
-    "filterGrid.status"() {
-      this.getStoreByFilter(this.filterGrid);
+    "filterDataTable.status"() {
+      this.getStoreByFilter(this.filterDataTable);
     },
   },
-  filters:{
-    vmquang(value){
-      if(value){
-        let result = value.replace(/(\d\d\d)(\d\d\d)(\d\d\d\d)/, '$1 $2$3');
-        return result
+  /**
+   * Filter dữ liệu hiển thị.
+   */
+  filters: {
+    /**
+     * Filter số điện thoại, tách 3 số đầu.
+     * CreatedBy: vmquang 13/5/2021.
+     * Trả về số điện thoại đã tách 3 số đầu.
+     * Trả về null nếu không có số điện thoại.
+     */
+    formatPhone(value) {
+      if (value) {
+        let result = value.replace(/(\d\d\d)(\d\d\d)(\d\d\d\d)/, "$1 $2$3");
+        return result;
       }
       return null;
-    }
+    },
   },
   methods: {
-    //Methods get data , filter
+    /**
+     * Lấy URL api filter dữ liệu.
+     * CreatedBy: vmquang 13/5/2021.
+     */
     getEndPointFiler(filter) {
       var paramCode = `storeCode=${filter.storeCode}`;
       var paramName = `storeName=${filter.storeName}`;
@@ -304,6 +310,10 @@ export default {
       //`http://localhost:35480/api/v1/stores/filter?storeCode=${filter.storeCode}&storeName=${filter.storeName}&address=${filter.address}&phoneNumber=${filter.phoneNumber}&status=${filter.status}`;
     },
 
+    /**
+     * Hàm lấy dữ liệu theo API filter.
+     * CreatedBy: vmquang 13/5/2021.
+     */
     getStoreByFilter(filter) {
       var endpoint = this.getEndPointFiler(filter);
 
@@ -322,24 +332,42 @@ export default {
         })
         .catch((error) => console.log(error));
     },
+    /**
+     * Reload lại data, gọi đến hàm Filter dữ liệu với các param = empty.
+     * CreatedBy: vmquang 13/5/2021.
+     */
     reLoadData() {
       this.isLoaded = false;
-      this.filterGrid.resetFilterStore();
-      this.getStoreByFilter(this.filterGrid);
+      this.filterDataTable.resetFilterStore();
+      this.getStoreByFilter(this.filterDataTable);
     },
 
-    //xử lý dữ liệu 1 hàng được chọn
+    /**
+     * 1 row có được chọn hay không.
+     * trả về true/false.
+     * CreatedBy: vmquang 13/5/2021.
+     */
     isSelected(storeId) {
       if (this.selectedShopId == storeId) return true;
       return false;
     },
 
-    clickRow(storeId,shop) {
+    /**
+     * hàm xử 1 row được chọn.
+     * gán Id của row được chọn, truyền vào props.
+     * CreatedBy: vmquang 13/5/2021.
+     */
+    clickRow(storeId, shop) {
       this.selectedShopId = storeId;
-      this.objectSelected=shop;
+      this.objectSelected = shop;
     },
 
-    //Methods xóa data
+    /**
+     * Mở thông báo khi xóa 1 row.
+     * Thông báo chọn row khi chưa được chọn.
+     * Thông báo xóa row đang chọn.
+     * CreatedBy: vmquang 13/5/2021.
+     */
     openModalDeleteShop() {
       if (this.selectedShopId == null || this.selectedShopId == "") {
         this.openAlertModal("Vui lòng chọn bản ghi để xóa");
@@ -347,9 +375,17 @@ export default {
       }
       this.$refs.ModalDelete.show();
     },
+    /**
+     * đóng thông báo xóa dữ liệu.
+     * CreatedBy: vmquang 13/5/2021.
+     */
     closeDeletePopUp() {
       this.$refs.ModalDelete.hide();
     },
+    /**
+     * Hiển thị thông báo xóa.
+     * CreatedBy: vmquang 13/5/2021.
+     */
     showAlertDelete(alertMessage) {
       this.alertMessage = alertMessage;
       this.openAlertModal(this.alertMessage);
@@ -357,7 +393,10 @@ export default {
       this.closeDeletePopUp();
     },
 
-    //Method thêm mới
+    /**
+     * Hiển thị modal Thêm mới cửa hàng.
+     * CreatedBy: vmquang 13/5/2021.
+     */
     openModalCreateShop() {
       this.checkQuang = true;
       this.$refs.ModalCreate.show();
@@ -368,12 +407,17 @@ export default {
 
       this.formMode = "post";
     },
+
+    /**
+     * đóng Modal thêm cửa hàng.
+     * CreatedBy: vmquang 13/5/2021.
+     */
     closeCreateDialogForm() {
       this.$refs.ModalCreate.hide();
     },
 
     /**
-     * Sự kiện mở dialog để sửa
+     * Sự kiện mở Modal để sửa
      * CreatedBy: vmquang 15.04.2021
      */
     openEditDialog() {
@@ -390,7 +434,10 @@ export default {
       }, 0);
     },
 
-    //Hiển thị thông báo sau khi thêm/sửa/xóa
+    /**
+     * Hiển thị thông báo sao khi thêm/sửa.
+     * CreatedBy: vmquang 13/5/2021.
+     */
     openAlertModal(message) {
       this.showAlert = true;
       this.alertMessage = message;
@@ -399,7 +446,10 @@ export default {
       }, 4000);
     },
 
-    //lấy trạng thái cửa hàng để hiển thị
+    /**
+     * Lấy tên của trạng thái cửa hàng.
+     * CreatedBy: vmquang 13/5/2021.
+     */
     getStatusStoreName(value) {
       var status = String;
       if (value == 0) {
@@ -412,6 +462,7 @@ export default {
       return status;
     },
 
+    
     showAlertDialog(alertMessage) {
       console.log(alertMessage);
       this.alertMessage = alertMessage;
@@ -419,10 +470,10 @@ export default {
       this.reLoadData();
       this.closeCreateDialogForm();
     },
-    showAlertCopyObject(){
-      this.alertMessage="Chức năng  đang hoàn thiện";
+    showAlertCopyObject() {
+      this.alertMessage = "Chức năng  đang hoàn thiện";
       this.openAlertModal(this.alertMessage);
-    }
+    },
   },
 };
 </script>

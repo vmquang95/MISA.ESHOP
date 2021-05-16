@@ -14,15 +14,7 @@ namespace MISA.EShop.Infrastructure.Repository
     {
         public IEnumerable<Ward> GetWardWithDistrict(Guid? districtId)
         {
-            //string procName = $"Proc_GetWardWithDistrict";
-
-            //var parameters = new DynamicParameters();
-            //parameters.Add("@DistrictId", districtId);
-
-            //var wardList = _dbConnection
-            //    .Query<Ward>
-            //    (procName, parameters, commandType: CommandType.StoredProcedure);
-            //return wardList;
+ 
 
             string queryString = $"SELECT w.DistrictId,w.WardId,w.WardName FROM Ward w  WHERE w.DistrictId ='{districtId}'";
 

@@ -8,8 +8,7 @@ using System.Threading.Tasks;
 namespace MISA.EShop.Core.Interfaces
 {
     /// <summary>
-    /// Lớp IBaseService các thao tác chung.
-    /// Xử lý nghiệp vụ của các Entities.
+    /// Lớp IBaseService các thao tác chung xử lý nghiệp vụ của các thực thể.
     /// </summary>
     /// <typeparam name="T">Kiểu của thực thể</typeparam>
     /// CreatedBy: vmquang(14/5/2021).
@@ -24,7 +23,7 @@ namespace MISA.EShop.Core.Interfaces
         ResponseResult GetEntities();
 
         /// <summary>
-        /// Lấy thông tin của thực thể theo id.
+        /// Nghiệp vụ Lấy thông tin của thực thể theo id.
         /// </summary>
         /// <param name="entityId">ID của đối tượng</param>
         /// <returns>ResponseResult gồm Data,DevMsg,UserMsg,ErrorCode,...</returns>
@@ -32,7 +31,7 @@ namespace MISA.EShop.Core.Interfaces
         ResponseResult GetById(Guid entityId);
 
         /// <summary>
-        /// Thêm mới một thực thể
+        /// Nghiệp vụ Thêm mới một thực thể
         /// </summary>
         /// <param name="entity">Thực thể cần thêm mới</param>
         /// <returns>ResponseResult gồm Data,DevMsg,UserMsg,ErrorCode,...</returns>
@@ -40,7 +39,7 @@ namespace MISA.EShop.Core.Interfaces
         ResponseResult Insert(T entity);
 
         /// <summary>
-        /// Thêm mới một thực thể
+        /// Nghiệp vụ sửa thông tin 1 trường dữ liệu thực thể một thực thể
         /// </summary>
         /// <param name="entity">Thực thể cần thêm mới</param>
         /// <returns>ResponseResult gồm Data,DevMsg,UserMsg,ErrorCode,...</returns>
@@ -48,7 +47,7 @@ namespace MISA.EShop.Core.Interfaces
         ResponseResult Update(T entity, Guid entityId);
 
         /// <summary>
-        /// Xóa một bản ghi theo ID
+        /// Nghiệp vụ Xóa một bản ghi theo ID
         /// </summary>
         /// <param name="entityId">ID của thực thể  cần xóa</param>
         /// <returns>ResponseResult gồm Data,DevMsg,UserMsg,ErrorCode,...</returns>

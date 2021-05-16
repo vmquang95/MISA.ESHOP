@@ -8,13 +8,22 @@ using System.Threading.Tasks;
 
 namespace MISA.EShop.Core.Interfaces
 {
+    /// <summary>
+    /// Interface bao gồm các hàm xử lý nghiệp vụ của Province.
+    /// Kế thừa từ lớp cở sở IBaseService.
+    /// Có thêm nghiệp vụ riêng.
+    /// </summary>
+    /// CreatedBy: vmquang(14/5/2021).
     public interface IProvinceService : IBaseService<Province>
     {
+        #region Methods
         /// <summary>
-        /// Lấy thông tin tỉnh thành theo id quốc gia
+        /// Nghiệp vụ Lấy danh sách các tỉnh/thành phố  theo Id quốc gia.
         /// </summary>
-        /// <param name="countryId">ID quốc gia</param>
-        /// <returns>Danh sách tỉnh thành trực thuộc</returns>
+        /// <param name="countryId">ID quốc gia/thành phố</param>
+        /// <returns>1 đối tượng ResponResult: data,DevMsg,UserMsg,ErorCode,...</returns>
+        /// CreatedBy: vmquang(14/5/2021)
         ResponseResult GetProvinceWithCountry(Guid? countryId);
+        #endregion
     }
 }

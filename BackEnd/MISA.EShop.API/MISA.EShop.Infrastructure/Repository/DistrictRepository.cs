@@ -14,15 +14,7 @@ namespace MISA.EShop.Infrastructure.Repository
     {
         public IEnumerable<District> GetDistrictWithProvince(Guid? provinceId)
         {
-            //string procName = $"Proc_GetDistrictWithProvince";
-
-            //var parameters = new DynamicParameters();
-            //parameters.Add("@ProvinceId", provinceId);
-
-            //var districtList = _dbConnection
-            //    .Query<District>
-            //    (procName, parameters, commandType: CommandType.StoredProcedure);
-            //return districtList;
+     
 
             string queryString = $"SELECT d.ProvinceId,d.DistrictId,d.DistrictName FROM District d  WHERE d.ProvinceId ='{provinceId}'";
 

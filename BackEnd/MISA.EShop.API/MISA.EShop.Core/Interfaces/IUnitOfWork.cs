@@ -9,31 +9,39 @@ namespace MISA.EShop.Core.Interfaces
     /// <summary>
     /// Interface chứa các việc xử lý nghiệp vụ chung của các đối tượng.
     /// </summary>
+    /// CreatedBy: vmquang (14/5/2021)
     public interface IUnitOfWork
     {
+        #region Properties
         /// <summary>
-        /// Đối tượng cửa hàng
+        /// object đại diện cho IStoreRepository
         /// </summary>
+        /// CreatedBy: vmquang (14/5/2021)
         IStoreRepository StoreTask { get; }
 
         /// <summary>
-        /// Đối tượng quốc gia
+        /// object đại diện cho ICountryRepository
         /// </summary>
+        /// CreatedBy: vmquang (14/5/2021)
         ICountryRepository CountryTask { get; }
 
         /// <summary>
-        /// Đối tượng tỉnh/thành phố
+        /// object đại diện cho IProvinceRepository
         /// </summary>
+        /// CreatedBy: vmquang (14/5/2021)
         IProvinceRepository ProvinceTask { get; }
 
         /// <summary>
-        /// Đối tượng quận/huyện
+        /// object đại diện cho IDistrictRepository
         /// </summary>
+        /// CreatedBy: vmquang (14/5/2021)
         IDistrictRepository DistrictTask { get; }
 
         /// <summary>
-        /// Đối tượng phường/xã
+        /// object đại diện cho IWardRepository
         /// </summary>
+        /// CreatedBy: vmquang (14/5/2021)
         IWardRepository WardTask { get; }
+        #endregion
     }
 }

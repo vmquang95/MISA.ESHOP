@@ -276,7 +276,7 @@ export default {
         status: 0,
         street: "",
         createDate: new Date(),
-        createUserId: "149fb958744f70c67709bf1378b8dc91",
+        createdBy: "VMQUANG",
       },
 
       country: [],
@@ -426,10 +426,10 @@ export default {
         .get("http://localhost:35480/api/v1/Countrys")
         .then((respone) => {
           var option = [];
-          respone.data.data.forEach((element) => {
+          respone.data.data.forEach((item) => {
             option.push({
-              text: element.countryName,
-              value: element.countryId,
+              text: item.countryName,
+              value: item.countryId,
             });
           });
           this.country = option;
@@ -449,10 +449,10 @@ export default {
           )
           .then((respone) => {
             var option = [];
-            respone.data.data.forEach((element) => {
+            respone.data.data.forEach((item) => {
               option.push({
-                text: element.provinceName,
-                value: element.provinceId,
+                text: item.provinceName,
+                value: item.provinceId,
               });
             });
             this.province = option;
@@ -473,10 +473,10 @@ export default {
           )
           .then((respone) => {
             var option = [];
-            respone.data.data.forEach((element) => {
+            respone.data.data.forEach((item) => {
               option.push({
-                text: element.districtName,
-                value: element.districtId,
+                text: item.districtName,
+                value: item.districtId,
               });
             });
             this.district = option;
@@ -496,10 +496,10 @@ export default {
           )
           .then((respone) => {
             var option = [];
-            respone.data.data.forEach((element) => {
+            respone.data.data.forEach((item) => {
               option.push({
-                text: element.wardName,
-                value: element.wardId,
+                text: item.wardName,
+                value: item.wardId,
               });
             });
             this.ward = option;
@@ -508,7 +508,7 @@ export default {
       }
     },
 
-    // reset dữ liệu trong form
+    // reset dữ liệu.
     resetForm: function () {
       this.store.storeId = null;
       this.store.storeCode = "";
@@ -531,7 +531,6 @@ export default {
     /**
      * Validate dữ liệu khi thêm và sửa
      * CreatedBy: vmquang 15.04.2021
-     * ModifiedBy: vmquang 16.04.2021
      */
     validateForm() {
       if (
@@ -594,8 +593,9 @@ export default {
       return valid;
     },
     /**
-     * Kiểm tra số điện thoại
-     * createdBy: vmquang 19.04.2021
+     * Kiểm tra số điện thoại.
+     * Nhập vào số, 10 chữ số.
+     * createdBy: vmquang 14.04.2021
      */
     validatePhoneNumber() {
       var phone = /^\d{10}$/;
@@ -674,12 +674,15 @@ export default {
         this.titleDialog = "Thêm mới cửa hàng";
       }
     },
+    //theo dõi countryId, get dữ liệu Province khi country thay đổi 
     "store.countryId"() {
       this.getProvinceData();
     },
+    //theo dõi provinceId, get dữ liệu District khi provinceId thay đổi 
     "store.provinceId"() {
       this.getDistrictData();
     },
+    //theo dõi districtId, get dữ liệu Ward khi districtId thay đổi 
     "store.districtId"() {
       this.getWardData();
     },

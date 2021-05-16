@@ -7,26 +7,41 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace MISA.EShop.WebAPI.Controllers
 {
-
+    /// <summary>
+    /// API cho Store.
+    /// Có kế thừa từ BaseEntitieController.
+    /// Có thêm API riêng.
+    /// </summary>
+    /// CreatedBy: vmquang 14/5/2021.
     public class StoreController : BaseEntityController<Store>
     {
+        #region Declare
         private IStoreService _storeService;
+        #endregion
+
+        #region Constructor
+        /// <summary>
+        /// hàm khởi tạo.
+        /// </summary>
+        /// <param name="storeService">1object thực thi IstoreService</param>
+        /// CreatedBy: vmquang(16/5/2021)
         public StoreController(IStoreService storeService) : base(storeService)
         {
             _storeService = storeService;
         }
+        #endregion
 
 
+        #region Methods
         /// <summary>
         /// API lấy thông tin đối tượng theo mã 
         /// </summary>
         /// <param name="storeCode">Mã cửa hàng</param>
         /// <returns>ResponseResult với data là Danh sách bản ghi có mã cửa hàng bằng mã cửa hàng truyền vào</returns>
-        /// CreatedBy: ntcu 20.04.20201
+        /// CreatedBy: vmquang 14.5.20201
         [HttpGet("getbycode")]
         public IActionResult Get(string storeCode)
         {
@@ -48,7 +63,7 @@ namespace MISA.EShop.WebAPI.Controllers
         /// </summary>
         /// <param name="filterparams">Đối tượng có các thuộc tính các tham số lọc</param>
         /// <returns>ResponseResult với data là Danh sách cửa hàng lọc được</returns>
-        /// CreatedBy: nctu 20.04.2021
+        /// CreatedBy: vmquang(16/5/2021)
         [HttpGet("Filter")]
         public IActionResult Get([FromQuery] FilterStoreParams filterparams)
         {
@@ -68,8 +83,8 @@ namespace MISA.EShop.WebAPI.Controllers
             }
             return Ok(responseResult);
         }
+        #endregion
 
-        
 
     }
 }

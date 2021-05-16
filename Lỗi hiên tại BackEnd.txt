@@ -1,0 +1,4 @@
+﻿1. chưa comment đầy đủ phần Services, Repository.
+2. Mã lỗi trả về API chưa đúng hết các trường hợp.
+3. Lỗi  Excute procduce , không nhận tham số.
+4.

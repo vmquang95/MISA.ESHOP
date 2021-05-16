@@ -1,3 +1,5 @@
 ﻿1. hiển thị dữ liệu, filer, tìm kiếm
 2. xóa
-3.Ui cơ bản xong
+3.Ui cơ bản xong.
+4.Thêm,sửa cơ bản xong.
+5.Đã có validate.

@@ -16,6 +16,7 @@ namespace MISA.EShop.Core.Interfaces
         #region Methods
         /// <summary>
         /// Lấy toàn bộ dữ liệu các bản ghi của Thực thể.
+        /// Thao tác trực tiếp với database.
         /// </summary>
         /// <returns>Danh sách bản ghi của thực thể.</returns>
         /// CreatedBy: vmquang(14/5/2021).
@@ -23,6 +24,7 @@ namespace MISA.EShop.Core.Interfaces
 
         /// <summary>
         /// Lấy dữ liệu của thực thể theo khóa chính Id.
+        /// Thao tác trực tiếp với database.
         /// </summary>
         /// <param name="entityId">ID của thực thể.</param>
         /// <returns>1 bản ghi dữ liệu duy nhất của thực thể có ID tương ứng</returns>
@@ -31,6 +33,7 @@ namespace MISA.EShop.Core.Interfaces
 
         /// <summary>
         /// Thêm mới một bản ghi của thực thể.
+        /// Thao tác trực tiếp với database.
         /// </summary>
         /// <param name="entity">Thực thể thêm mới</param>
         /// <returns>Số bản ghi thêm mới thành công.(-1 fail)</returns>
@@ -39,6 +42,7 @@ namespace MISA.EShop.Core.Interfaces
 
         /// <summary>
         /// Sửa thông tin của bản ghi thực thể theo Id.
+        /// Thao tác trực tiếp với database.
         /// </summary>
         /// <param name="entity">Thực thể cần sửa.</param>
         /// <param name="entityId">ID của thực thể cần sửa.</param>
@@ -48,6 +52,7 @@ namespace MISA.EShop.Core.Interfaces
 
         /// <summary>
         /// Xóa một bản ghi theo ID.
+        /// Thao tác trực tiếp với database.
         /// </summary>
         /// <param name="entityId">ID của thực thể cần xóa</param>
         /// <returns>Số bản ghi đã xóa thành công (-1 fail)</returns>

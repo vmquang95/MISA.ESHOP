@@ -35,7 +35,7 @@ namespace MISA.EShop.WebAPI
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "MISA.EShop.WebAPI", Version = "v1" });
             });
 
-            //Dependency Injection
+            //Dependency Injection , tiêm.
             services.AddScoped(typeof(IBaseService<>), typeof(BaseService<>));
             services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
             

@@ -8,15 +8,22 @@ using System.Threading.Tasks;
 
 namespace MISA.EShop.Core.Interfaces
 {
+    /// <summary>
+    /// Interface bao gồm các hàm xử lý nghiệp vụ của Store.
+    /// Kế thừa từ lớp cở sở IBaseService.
+    /// Có thêm nghiệp vụ riêng.
+    /// </summary>
+    /// CreatedBy: vmquang(14/5/2021).
     public interface IStoreService : IBaseService<Store>
     {
-       
 
+        #region Methods
         /// <summary>
-        /// Lấy thông tin cửa hàng theo mã cửa hàng
+        /// Lấy thông tin cửa hàng theo mã cửa hàng.
         /// </summary>
         /// <param name="storeCode">Mã cửa hàng</param>
-        /// <returns>Thông tin cửa hàng có mã là tham số truyền vào</returns>
+        /// <returns>1 đối tượng ResponResult: data,DevMsg,UserMsg,ErorCode,...</returns>
+        /// CreatedBy: vmquang(14/5/2021)
         ResponseResult GetStoreByStoreCode(string storeCode);
 
         /// <summary>
@@ -27,9 +34,10 @@ namespace MISA.EShop.Core.Interfaces
         /// <param name="address">Địa chỉ</param>
         /// <param name="phoneNumber">Số điện thoại</param>
         /// <param name="status">Trạng thái hoạt động</param>
-        /// <returns>Danh sách cửa hàng tìm thấy</returns>
+        /// <returns>1 đối tượng ResponResult: data,DevMsg,UserMsg,ErorCode,...</returns>
+        /// CreatedBy: vmquang(14/5/2021)
         ResponseResult GetStoreFilter(string storeCode, string storeName, string address, string phoneNumber, int? status);
+        #endregion
 
-        
     }
 }

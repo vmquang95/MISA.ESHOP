@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace MISA.EShop.Core.Interfaces
 {
     /// <summary>
-    /// Interface bao gồm các nghiệp vụ chung của Province.
+    /// Interface bao gồm các chức năng chung của Province.
     /// Thao tác dữ liêu với database.
     /// Kế thừa từ lớp cở sở IBaseRepository.
     /// Có thêm method riêng.

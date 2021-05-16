@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace MISA.EShop.Core.Interfaces
 {
     /// <summary>
-    /// Interface bao gồm các nghiệp vụ chung của Ward.
+    /// Interface bao gồm các chức năng. của Ward.
     /// Thao tác dữ liêu với database.
     /// Kế thừa từ lớp cở sở IBaseRepository.
     /// Có thêm method riêng.

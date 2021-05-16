@@ -1,7 +1,10 @@
 <template>
   <div class="alert-modal">
+    <div class="header-alert">
+      <div class="alert-text-header">Thông báo</div>
+    </div>
     <div class="alert-form">
-      <div class="alert-text">{{ alertMessage }}</div>
+      <div class="alert-text">{{alertMessage}}</div>
     </div>
   </div>
 </template>

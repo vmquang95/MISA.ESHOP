@@ -4,36 +4,38 @@
   .fail {
     background-color: #ffe7af;
   }
+
+ 
   
   .alert-modal {
-    width: fit-content;
-    min-width: 200px;
-    height: 80px;
-    min-height: 30px;
-    color: #000;
+    color: black;
+    background-color: grey;
     font-size: 15px;
-    background-color: #e99f30;
-    border-radius: 3px;
     /* opacity: 0.9; */
+    border: 2px solid black;
     z-index: 1000;
-    box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(1 1 2 / 15%);
-    display: flex;
     align-items: center;
-    padding: 1px 1px 1px 14px;
     position: fixed;
     top: 60px;
     right: 30px;
     align-items: center;
   }
+  .header-alert{
+    height: 30px;
+    width: 100%;
+    text-align: center;
+    padding-top: 5px; ;
+  }
+ 
   .alert-form {
     width: calc(100% - 40px);
-    height: 62px;
+    height: 45px;
+    background-color: white !important;
     padding: 8px 20px;
     color: #434774;
     font-weight: bold;
-    border-top-right-radius: 5px;
     background-color: #ffffff;
-    font-size: 15px;
+    font-size: 18px;
     vertical-align: middle;
   
   }

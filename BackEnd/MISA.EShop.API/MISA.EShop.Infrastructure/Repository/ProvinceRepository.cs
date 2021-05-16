@@ -20,15 +20,6 @@ namespace MISA.EShop.Infrastructure.Repository
                 .Query<Province>(queryString);
             return provinceList;
 
-
-            //string procName = "Proc_GetProvinceWithCountry";
-            //var parameters = new DynamicParameters();
-            //parameters.Add("@CountryId", countryId);
-
-            //var provinceList = _dbConnection
-            //    .Query<Province>
-            //    (procName, parameters, commandType: CommandType.StoredProcedure);
-            //return provinceList;
         }
     }
 }

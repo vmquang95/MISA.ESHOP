@@ -36,7 +36,7 @@ namespace MISA.EShop.Core.Services
 
         #region Methods
         /// <summary>
-        /// Lấy thông tin của thực thể theo id.
+        /// Nghiệp vụ Lấy thông tin của thực thể theo id.
         /// </summary>
         /// <param name="entityId">ID của đối tượng</param>
         /// <returns>ResponseResult gồm Data,DevMsg,UserMsg,ErrorCode,...</returns>
@@ -51,7 +51,7 @@ namespace MISA.EShop.Core.Services
             {
                 result.IsSuccess = false;
                 result.ErrorCode = Enum.ErrorCode.BADREQUEST;
-                result.DevMsg = Resources.ResourceMessage.Error_NotExist;
+                result.DevMsg = Resources.Messages.ErrorIsNotExist;
             }
             //có id
             else
@@ -65,15 +65,15 @@ namespace MISA.EShop.Core.Services
                     result.Data = entity;
                     result.IsSuccess = true;
                     result.ErrorCode = Enum.ErrorCode.NONE;
-                    result.UserMsg = Resources.ResourceMessage.Get_Success;
+                    result.UserMsg = Resources.Messages.GetDataSuccess;
 
                 }
                 //không có dữ liệu trả về , gán message thông báo/
                 else
                 {
                     result.IsSuccess = false;
-                    result.DevMsg = Resources.ResourceMessage.Error_Store_NotExist;
-                    result.UserMsg = Resources.ResourceMessage.Error_Store_NotExist;
+                    result.DevMsg = Resources.Messages.ErrorIsNotExist;
+                    result.UserMsg = Resources.Messages.ErrorIsNotExist;
                 }
             }
 
@@ -94,13 +94,13 @@ namespace MISA.EShop.Core.Services
             {
                 result.Data = entities;
                 result.ErrorCode = Enum.ErrorCode.NONE;
-                result.UserMsg = Resources.ResourceMessage.Get_Success;
+                result.UserMsg = Resources.Messages.GetDataSuccess;
             }
             else
             {
                 result.IsSuccess = false;
-                result.UserMsg = Resources.ResourceMessage.NotFound;
-                result.DevMsg = Resources.ResourceMessage.NoContent;
+                result.UserMsg = Resources.Messages.NotFoundData;
+                result.DevMsg = Resources.Messages.NoContentData;
                 result.ErrorCode = Enum.ErrorCode.NOCONTENT;
             }
 
@@ -130,14 +130,14 @@ namespace MISA.EShop.Core.Services
                 {
                     result.IsSuccess = true;
                     result.ErrorCode = Enum.ErrorCode.NONE;
-                    result.UserMsg = Resources.ResourceMessage.Insert_Success;
+                    result.UserMsg = Resources.Messages.InsertDataSuccess;
                 }
                 else
                 {
                     result.IsSuccess = false;
                     result.ErrorCode = Enum.ErrorCode.EXCEPTION;
-                    result.DevMsg = Resources.ResourceMessage.Error_Insert;
-                    result.UserMsg = Resources.ResourceMessage.Error_Insert;
+                    result.DevMsg = Resources.Messages.ErrorInsertData;
+                    result.UserMsg = Resources.Messages.ErrorInsertData;
                 }
             }
 
@@ -168,15 +168,15 @@ namespace MISA.EShop.Core.Services
                 {
                     result.IsSuccess = true;
                     result.ErrorCode = Enum.ErrorCode.NONE;
-                    result.UserMsg = Resources.ResourceMessage.Update_Success;
+                    result.UserMsg = Resources.Messages.UpdateDataSuccess;
 
                 }
                 else
                 {
                     result.IsSuccess = false;
                     result.ErrorCode = Enum.ErrorCode.EXCEPTION;
-                    result.DevMsg = Resources.ResourceMessage.Error_Update;
-                    result.UserMsg = Resources.ResourceMessage.Error_Update;
+                    result.DevMsg = Resources.Messages.ErrorUpdateData;
+                    result.UserMsg = Resources.Messages.ErrorUpdateData;
 
                 }
             }
@@ -203,8 +203,8 @@ namespace MISA.EShop.Core.Services
             else
             {
                 result.IsSuccess = false;
-                result.UserMsg = Resources.ResourceMessage.NoContent;
-                result.DevMsg = Resources.ResourceMessage.NoContent;
+                result.UserMsg = Resources.Messages.NoContentData;
+                result.DevMsg = Resources.Messages.NoContentData;
                 result.ErrorCode = Enum.ErrorCode.NOCONTENT;
             }
 

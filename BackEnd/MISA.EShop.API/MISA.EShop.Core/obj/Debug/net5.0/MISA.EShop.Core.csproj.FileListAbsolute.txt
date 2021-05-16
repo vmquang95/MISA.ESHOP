@@ -73,7 +73,6 @@ C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.C
 C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.Core\bin\Debug\net5.0\ref\MISA.EShop.Core.dll
 C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.Core\bin\Debug\net5.0\MISA.EShop.Core.pdb
 C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.Core\obj\Debug\net5.0\MISA.EShop.Core.csprojAssemblyReference.cache
-C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.Core\obj\Debug\net5.0\MISA.EShop.Core.Resources.ResourceMessage.resources
 C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.Core\obj\Debug\net5.0\MISA.EShop.Core.csproj.GenerateResource.cache
 C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.Core\obj\Debug\net5.0\MISA.EShop.Core.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.Core\obj\Debug\net5.0\MISA.EShop.Core.AssemblyInfoInputs.cache
@@ -82,3 +81,4 @@ C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.C
 C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.Core\obj\Debug\net5.0\MISA.EShop.Core.dll
 C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.Core\obj\Debug\net5.0\ref\MISA.EShop.Core.dll
 C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.Core\obj\Debug\net5.0\MISA.EShop.Core.pdb
+C:\Users\Dell E7450\Desktop\MF806\MISA.Eshop\BackEnd\MISA.EShop.API\MISA.EShop.Core\obj\Debug\net5.0\MISA.EShop.Core.Resources.Messages.resources
