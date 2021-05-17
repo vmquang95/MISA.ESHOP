@@ -2,12 +2,12 @@
   <div class="shop-list">
     <!-- start content -->
     <div class="content">
-      <div class="content-body">
+      <div class="content-body" id="click-outside">
         <!-- start tool bar -->
         <div class="tool-bar">
           <div class="tool-bar-btn div-btn-add">
             <button
-              class="t-btn btn-add"
+              class="t-btn btn-add click-outside"
               id="btn-add"
               @click="openModalCreateShop()"
             >
@@ -250,9 +250,9 @@ export default {
     };
   },
 
- 
   created() {
     this.getStoreByFilter(this.filterDataTable);
+    this.clickOutside();
   },
   /**
    * Theo dõi sự thay đổi của input filter.
@@ -416,6 +416,18 @@ export default {
       this.$refs.ModalCreate.hide();
     },
 
+    // click outside
+    clickOutside() {
+      window.addEventListener("click", function (e) {
+        if (document.getElementById("click-outside").contains(e.target)) {
+          console.log("inside");
+        } else {
+          // Clicked outside the box
+          console.log("outside");
+        }
+      });
+    },
+
     /**
      * Sự kiện mở Modal để sửa
      * CreatedBy: vmquang 15.04.2021
@@ -462,7 +474,6 @@ export default {
       return status;
     },
 
-    
     showAlertDialog(alertMessage) {
       console.log(alertMessage);
       this.alertMessage = alertMessage;
