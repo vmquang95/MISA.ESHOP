@@ -57,6 +57,7 @@
 
         .t-grid .filter-text{
             border: 1px solid #d0d0d0;
+            border-bottom: none !important;
             height: 28px;
             width: 100%;
             padding-left: 8px;
@@ -70,6 +71,7 @@
         }
         .t-grid .filter-text:focus, .filter-select:focus{
             border-color: #6b6f9d;
+            border-bottom: none !important;
         }
 
     /* Định dạng cho phần tbody */

@@ -551,7 +551,7 @@ export default {
       var valid = true;
       if (!this.store.storeCode) {
         this.validate.storeCode = false;
-        this.warningMsg1 = "Trường này không được để trống";
+        this.warningMsg1 = "Mã cửa hàng không được để trống!";
         valid = false;
       } else {
         this.validate.storeCode = true;
@@ -568,7 +568,7 @@ export default {
       let valid = true;
       if (!this.store.storeName) {
         this.validate.storeName = false;
-        this.warningMsg2 = "Trường này không được để trống";
+        this.warningMsg2 = "Tên cửa hàng không được để trống!";
         valid = false;
       } else {
         this.validate.storeName = true;
@@ -584,7 +584,7 @@ export default {
       let valid = true;
       if (!this.store.address) {
         this.validate.address = false;
-        this.warningMsg3 = "Trường này không được để trống";
+        this.warningMsg3 = "Địa chỉ không được để trống!";
         valid = false;
       } else {
         this.validate.address = true;
@@ -605,7 +605,7 @@ export default {
         this.store.phoneNumber != ""
       ) {
         this.validate.phoneNumber = false;
-        this.warningMsg4 = "Số điện thoại không đúng định dạng";
+        this.warningMsg4 = "Số điện thoại phải có 10 chứ số!";
         valid = false;
       } else {
         this.validate.phoneNumber = true;
@@ -631,7 +631,7 @@ export default {
             if (this.msg == "put") {
               if (respone.data.data.storeId != this.store.storeId) {
                 this.validate.storeCode = false;
-                this.warningMsg1 = "Mã cửa hàng đã tồn tại - sửa ";
+                this.warningMsg1 = "Mã cửa hàng bị trùng, thử lại mã khác!";
                 valid = false;
               } else {
                 this.validate.storeCode = true;
@@ -639,7 +639,7 @@ export default {
               }
             } else {
               this.validate.storeCode = false;
-              this.warningMsg1 = "Mã cửa hàng đã tồn tại - thêm ";
+              this.warningMsg1 = "Mã cửa hàng bị trùng, thử lại mã khác!";
               valid = false;
             }
           } else {
@@ -691,46 +691,5 @@ export default {
 </script>
 
 <style>
-.text-color-red{
-    color: #cf4c35;
-    margin-left: 1px;
-}
-.tooltiptext {
-  visibility: hidden;
-  width: 150px;
-  line-height: 20px;
-  background-color: #df4646;
-  border-radius: 3px;
-  color: #fff;
-  text-align: center;
-  padding: 4px 3px;
-  position: fixed;
-  left: calc(50% + 300px);
-  z-index: 1;
-}
-
-.tooltiptext::after {
-  content: " ";
-  position: absolute;
-  width: 0;
-  height: 0;
-  left: -14px;
-  right: auto;
-  top: 4px;
-  bottom: auto;
-  border: 7px solid;
-  border-color: transparent #df4646 transparent transparent;
-}
-
-.tooltipPhoneNumber {
-  left: calc(50% + 5px);
-}
-
-.warning {
-  cursor: pointer;
-}
-
-.warning:hover .tooltiptext {
-  visibility: visible;
-}
+@import url("../../../styles/base/formCreate.css");
 </style>

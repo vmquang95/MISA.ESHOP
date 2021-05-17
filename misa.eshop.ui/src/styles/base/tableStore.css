@@ -2,19 +2,24 @@
 /* Định dạng cho table */
 table{
     width: 100%;
-}
+}   
+    /* cột mã */
     .col-15{
         width: 12%;
     }
+    /* cột tên */
     .col-21{
         width: 17%;
     }
+    /* cột địa chỉ */
     .col-42{
         width: 50%;
     }
+    /* cột sdt */
     .col-10{
         width: 9%;
     }
+    /* cột status */
     .col-12{
         width: 12%;
     }
