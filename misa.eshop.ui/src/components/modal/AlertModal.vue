@@ -1,8 +1,6 @@
 <template>
   <div class="alert-modal">
-    <div class="header-alert">
-      <div class="alert-text-header">Thông báo</div>
-    </div>
+    <div class="info-icon"><img class = "info-icon-img" src="../../assets/icon/infomationRed.png" alt=""></div>
     <div class="alert-form">
       <div class="alert-text">{{alertMessage}}</div>
     </div>
