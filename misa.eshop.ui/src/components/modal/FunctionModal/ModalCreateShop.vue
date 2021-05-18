@@ -303,19 +303,33 @@ export default {
   },
 
   created(){
-    // document.addEventListener("keydown", keyDownTextField, false);
+    document.addEventListener("keydown", this.handleKeyUp);
 
-    // function keyDownTextField(e) {
-    // var keyCode = e.keyCode;
-    //   if(keyCode==13) {
-    //     console.log(123);
-    //   } else {
-    //     return
-    //   }
-    // }
     
   },
   methods: {
+      handleKeyUp(e){
+
+      //Ctrl S để lưu
+      if(e.ctrlKey && e.keyCode == 83)
+      {
+        e.preventDefault();
+        e.stopPropagation();
+        this.save('save');
+      }
+      //ctrB hoặc Escapce để ẩn form
+      else if( (e.keyCode == 27) || (e.ctrlKey && e.keyCode == 66)){
+        // e.preventDefault();
+        // e.stopPropagation();
+       this.hide();
+      }
+      else if(e.shiftKey && e.keyCode == 83)
+      {
+        e.preventDefault();
+        e.stopPropagation();
+        this.save('new')
+      }
+    },
     tabIndexLast() {
       this.$refs.storeAddress.focus();
     },

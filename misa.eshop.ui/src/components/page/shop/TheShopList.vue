@@ -72,6 +72,7 @@
                   <div class="thead-filter">
                     <button class="t-btn condition">*</button>
                     <input
+                      ref="inputTextCode"
                       type="text"
                       class="t-input filter-text"
                       id="filter-shop-code"
@@ -251,6 +252,7 @@ export default {
   },
 
   created() {
+    document.addEventListener("keydown", this.handleKeyUpList);
     this.getStoreByFilter(this.filterDataTable);
     this.clickOutside();
   },
@@ -296,6 +298,45 @@ export default {
     },
   },
   methods: {
+    handleKeyUpList(e){
+
+      //Shift N để mở form thêm mới.
+      if(e.shiftKey &&  e.keyCode == 78)
+      {
+        e.preventDefault();
+        e.stopPropagation();
+        this.openModalCreateShop();
+      }
+      //Shift E để mở form sửa
+      else if(e.shiftKey &&  e.keyCode == 69)
+      {
+        e.preventDefault();
+        e.stopPropagation();
+        this.openEditDialog();
+      }
+      //Shift D để mở form xóa
+      else if(e.shiftKey &&  e.keyCode == 68)
+      {
+        e.preventDefault();
+        e.stopPropagation();
+        this.openModalDeleteShop();
+      }
+      //Shift R để resetfata
+      else if(e.shiftKey &&  e.keyCode == 82)
+      {
+        e.preventDefault();
+        e.stopPropagation();
+        this.reLoadData();
+      }
+
+      // else if(e.shiftKey &&  e.keyCode == 49)
+      // {
+      //   e.preventDefault();
+      //   e.stopPropagation();
+      //   this.$refs.inputTextCode.focus();
+      // }
+    },
+
     /**
      * Lấy URL api filter dữ liệu.
      * CreatedBy: vmquang 13/5/2021.

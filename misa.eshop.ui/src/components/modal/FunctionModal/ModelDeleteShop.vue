@@ -84,10 +84,26 @@ export default {
     };
   },
   created() {
-
+     document.addEventListener("keydown", this.handleKeyUpDelete);
     
   },
   methods: {
+    handleKeyUpDelete(e){
+
+      //Enter để xác nhận xóa
+      if( e.keyCode == 13)
+      {
+        e.preventDefault();
+        e.stopPropagation();
+        this.deleteRecord();
+      }
+      //Escapce để hủy bo
+      else if( e.keyCode == 27){
+         e.preventDefault();
+         e.stopPropagation();
+        this.hide();
+      }
+    },
     /**
      *  Ẩn dialog xác nhận xóa
      *  CreatedBy: vmquang 16.04.2021
