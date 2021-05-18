@@ -254,6 +254,7 @@ export default {
     this.getStoreByFilter(this.filterDataTable);
     this.clickOutside();
   },
+
   /**
    * Theo dõi sự thay đổi của input filter.
    * Tự đông cập nhật,load dữ liệu khi input được thay đổi.
