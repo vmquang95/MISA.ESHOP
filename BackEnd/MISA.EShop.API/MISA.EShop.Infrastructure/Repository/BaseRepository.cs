@@ -22,7 +22,7 @@ namespace MISA.EShop.Infrastructure.Repository
                "Port=3306;" +
                "User Id= dev; " +
                "Password=12345678;" +
-               "Database=MF806_VMQUANG_MISAeShop; " +
+               "Database=MF806_VMQUANG_MISA.Eshop; " +
                "convert zero datetime=True;";
 
         protected IDbConnection _dbConnection;

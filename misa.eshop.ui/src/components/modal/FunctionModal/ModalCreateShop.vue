@@ -303,6 +303,16 @@ export default {
   },
 
   created(){
+    // document.addEventListener("keydown", keyDownTextField, false);
+
+    // function keyDownTextField(e) {
+    // var keyCode = e.keyCode;
+    //   if(keyCode==13) {
+    //     console.log(123);
+    //   } else {
+    //     return
+    //   }
+    // }
     
   },
   methods: {
@@ -365,6 +375,7 @@ export default {
                   this.alertMessage = "Thêm thành công";
                   this.$emit("showAlertDialog", this.alertMessage);
                 } else {
+                  this.tabIndexFirst();
                   this.alertMessage = "Thêm thành công";
                   this.$emit("showAlertDialog", this.alertMessage);
                   this.show();

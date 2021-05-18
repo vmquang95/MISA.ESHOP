@@ -219,7 +219,7 @@ export default {
       storeStatus: [
         {
           statusName: "Tất cả",
-          value: 2,
+          value: "",
         },
         {
           statusName: "Đang hoạt động",
@@ -418,14 +418,14 @@ export default {
 
     // click outside
     clickOutside() {
-      window.addEventListener("click", function (e) {
-        if (document.getElementById("click-outside").contains(e.target)) {
-          console.log("inside");
-        } else {
-          // Clicked outside the box
-          console.log("outside");
-        }
-      });
+      // window.addEventListener("click", function (e) {
+      //   if (document.getElementById("click-outside").contains(e.target)) {
+      //     console.log("inside");
+      //   } else {
+      //     // Clicked outside the box
+      //     console.log("outside");
+      //   }
+      // });
     },
 
     /**
