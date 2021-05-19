@@ -12,6 +12,11 @@ namespace MISA.EShop.Infrastructure.Repository
 {
     public class ProvinceRepository:BaseRepository<Province>, IProvinceRepository
     {
+        /// <summary>
+        /// Lây danh sách tỉnh/thành phố theo Id quốc gia.
+        /// </summary>
+        /// <param name="countryId">Id quốc gia.</param>
+        /// <returns>Danh sách tỉnh/thành phố thuộc Id quốc gia.</returns>
         public IEnumerable<Province> GetProvinceWithCountry(Guid? countryId)
         {
             string queryString = $"SELECT p.CountryId,p.ProvinceId,p.ProvinceName FROM Province p WHERE p.CountryId = '{countryId}'";

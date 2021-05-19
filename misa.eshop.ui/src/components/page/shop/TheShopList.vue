@@ -248,6 +248,7 @@ export default {
 
       showAlert: false,
       alertMessage: "",
+      timeout:null
     };
   },
 
@@ -264,16 +265,16 @@ export default {
    */
   watch: {
     "filterDataTable.storeCode"() {
-      this.getStoreByFilter(this.filterDataTable);
+      this.setTimeOutInput();
     },
     "filterDataTable.storeName"() {
-      this.getStoreByFilter(this.filterDataTable);
+      this.setTimeOutInput();
     },
     "filterDataTable.address"() {
-      this.getStoreByFilter(this.filterDataTable);
+      this.setTimeOutInput();
     },
     "filterDataTable.phoneNumber"() {
-      this.getStoreByFilter(this.filterDataTable);
+      this.setTimeOutInput();
     },
     "filterDataTable.status"() {
       this.getStoreByFilter(this.filterDataTable);
@@ -298,6 +299,13 @@ export default {
     },
   },
   methods: {
+    setTimeOutInput()
+    {
+      clearTimeout(this.timeout)
+      this.timeout=setTimeout(() => {
+        this.getStoreByFilter(this.filterDataTable);
+      }, 1000);
+    },
     handleKeyUpList(e){
 
       //Shift N để mở form thêm mới.
@@ -440,7 +448,6 @@ export default {
      * CreatedBy: vmquang 13/5/2021.
      */
     openModalCreateShop() {
-      this.checkQuang = true;
       this.$refs.ModalCreate.show();
       var input = this.$refs.ModalCreate;
       setTimeout(() => {

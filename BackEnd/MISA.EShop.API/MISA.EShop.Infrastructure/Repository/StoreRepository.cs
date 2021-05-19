@@ -11,6 +11,12 @@ using System.Threading.Tasks;
 
 namespace MISA.EShop.Infrastructure.Repository
 {
+    /// <summary>
+    /// Lớp thực thi tương tác với database của Store.
+    /// Có kế thừa từ lớp BaseRepository.
+    /// Có thêm phương thức riêng.
+    /// </summary>
+    /// CreatedBy vmquang 18/5/2021.
     public class StoreRepository : BaseRepository<Store>, IStoreRepository
     {
 
